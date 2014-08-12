@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+
+        <link href="{{ asset('bundles/sifastpfe/assets/css/c.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/style1.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+        <link href="{{ asset('bundles/sifastpfe/assets/css/layout.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/font.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/form.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/global.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/menu.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/print.css') }}" rel="stylesheet" type="text/css" media="print" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/graphic.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/global.mq.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/style.mq.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/sifastpfe/assets/css/configuration.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+
+    {% endblock %}
+
+    {% block javascripts %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/jQuery/jQuery.1.7.js') }} "></script>
+        <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/modernizr.custom.js') }} "></script>
+        <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/modernizr.custom.17475.js') }} "></script>
+        <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/respond.js') }} "></script>
+
+        <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/html2canvas.js') }} "></script>
+        <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/jquery.plugin.html2canvas.js') }} "></script>
+
+
+    {% endblock %}
+
+
+
+
+
+</head>
+<body class="">
+    <header id="sk-header">
+        <div class="container_12 clearfix">
+            <div class="w_20 wt-100">
+                <div class="header-top">
+                    <a class="header_logo float-left" href="home" title="Menuiserie"> <img src="{{ asset("bundles/sifastpfe/assets/img/logo.png") }}" alt="Menuiserie"> </a>
+                    <a class="header_text" href="home">Menuiserie</a>
+                </div>
+                <div class="header-bottom"></div>
+            </div>
+            <div class="w_80 wt-100">
+                <div class="header_bar_top">
+
+                    <div class="reset_btn">
+                        <a class="poplight ajou btn-reset" href="#?w=700" rel="popup_name" title="A propos de"><img src="{{ asset("bundles/sifastpfe/assets/img/1329652454_People-MSN.png") }}" class="reset_btn_btn" alt="Qui sommes nous !"></a>
+                    </div>
+                    <div class="menu_bar"></div>
+
+                </div>
+                <div class="header_bar_bottom"></div>
+            </div>
+            <div class="header-bottom-bread grid_12">
+                <div class="menu-date clearfix" id="clock">
+                    <div id="date_heure"></div>
+                </div>
+                <div class="breadcrumb clearfix">
+                    <p class="breadcrumb_porte_alu"><a href="#">Configurateur</a></p>
+                </div>
+
+                <div class="mod-tools">
+                    <ul>
+                        <li>
+                            <a href="#" class="open-to-tools" title="Outils">
+                                <img src="{{ asset("bundles/sifastpfe/assets/img/parametre.png") }}" alt="paramètre">
+                            </a>
+                            <ul class="tools-liste">
+
+
+                                <!--Probleme de Js-->
+                                <li><a href="#?w=700" class="poplight_d ajou tools-parametre" title="Demande de devis" rel="popup_name_d"></a></li>
+
+                                <li><a href="#" class="tools-imp" title="Imprimer" onclick="window.print();" ></a></li><!--window.print();-->
+
+                                <li><a href="#?w=700" class="poplight_e ajou tools-save"  rel="popup_name_e" title="Enregistrer" ></a></li>
+
+                                <li><a href="#" class="" title="camera" ><button class="tools-cam butt" id="butt" onClick="cam();"></button></a></li>
+
+   
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </div>
+    </header>
+    <!--sk-body-->
+    
+    <div id="sk-body">
+        <div class="container_12 clearfix clear-both">
+
+
+
+            <div class="content-left w_20"> 
+                <div class="gamme-pdt active">
+                    <h2 class="pdt">Produits</h2>
+                </div>
+                <div class="menu-pdt">
+                    <ul class='menu niv-1'>
+                        <li><a class="icon icon-fenetre" href="#">Fenêtre</a>
+                            <img src="{{ asset("bundles/sifastpfe/assets/img/row-menu.png") }}" alt="menu actice"/>
+                            <ul class="niv-2">
+                                <li><img src="{{ asset("bundles/sifastpfe/assets/img/backgrounds/catalogue.png") }}"><a href="http://issuu.com/prefal/docs/catalogue-porte?e=3853878/5696235">Consulter le catalogue en ligne</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="icon icon-porte" href="#">Porte</a>
+                            <img src="{{ asset("bundles/sifastpfe/assets/img/row-menu.png") }}" alt="menu actice"/>
+                            <ul class="niv-2">
+                                <li><a href="alu">Aluminium</a></li>
+                                <li><a href="pvc">PVC</a></li>
+
+
+                                <li><a href="http://issuu.com/prefal/docs/catalogue-porte?e=3853878/5696235" target="_blank">Consulter le catalogue en ligne</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="icon icon-Michelaire" href="#">Michelaire</a>
+                            <img src="{{ asset("bundles/sifastpfe/assets/img/row-menu.png") }}" alt="menu actice"/>
+                            <ul class="niv-2">
+                                <li><img src="{{ asset("bundles/sifastpfe/assets/img/backgrounds/catalogue.png") }}"><a href="http://issuu.com/prefal/docs/catalogue-porte?e=3853878/5696235">Consulter le catalogue en ligne</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="icon icon-volet" href="#">Volet porte</a>
+                            <img src="{{ asset("bundles/sifastpfe/assets/img/row-menu.png") }}" alt="menu actice"/>
+                            <ul class="niv-2">
+                                <li><a href="alu">Aluminium</a></li>
+                                <li><a href="pvc">PVC</a></li>
+
+
+                                <li><a href="http://issuu.com/prefal/docs/catalogue-porte?e=3853878/5696235" target="_blank">Consulter le catalogue en ligne</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="content-right float-right"> 
+                <a href="#" title="image 01">
+                </a>
+                <div id="liquid" class="liquid">
+                    <span class="previous"></span>
+                    <div class="wrapper">
+                        <ul>
+                            <!--
+                            {% for image in images %}
+
+                                <li><a href="#" title="image 01"><img src="{{ image }}" class="porte" id="porte" style="width: 65px;height: 123px" width="65px" height="123px" alt="image 01" border="0" /></a></li>
+                            {% endfor %} 
+                            -->
+
+                            <ul class="carrousel-img">
+
+                                <li><a href="#"></a></li>
+
+                            </ul>
+
+
+
+                        </ul>
+
+                        <script>
+
+                            var test = {{ images|json_encode|raw }};                        </script>
+                        <script language="javascript">
+                                    function imprime_bloc(titre, objet) {
+                                        // Définition de la zone à imprimer 
+                                        var zone = document.getElementById(objet).innerHTML;
+
+                                        // Ouverture du popup 
+                                        var fen = window.open("", "", "height=800, width=600,toolbar=0, menubar=0, scrollbars=1, resizable=1,status=0, location=0, left=10, top=10");
+
+                                        // style du popup 
+                                        fen.document.body.style.color = '#000000';
+                                        fen.document.body.style.backgroundColor = '#FFFFFF';
+                                        fen.document.body.style.padding = "20px";
+
+                                        // Ajout des données a imprimer 
+                                        fen.document.title = titre;
+                                        fen.document.body.innerHTML += " " + zone + " ";
+
+                                        // Impression du popup 
+                                        fen.window.print();
+
+                                        //Fermeture du popup 
+                                        fen.window.close();
+                                        return true;
+                                    }
+                        </script>
+
+                    </div>
+                    <span class="next"></span>
+                </div>
+
+                <div id="work1">
+                    <div class="work" id="work" >
+
+
+
+                        <!-- SVP, prendre une phote de votre Galerie ou de votre camera ! Puis choisissez votre porte ! -->
+                        <div >
+                            <h4 class="h1111" id="imprime_moi">
+                                <img src="{{ asset("bundles/sifastpfe/assets/img/save/model.png") }}" classe="vd" ><br>
+
+                                SVP, prendre une phote de votre Galerie ou de votre camera ! Puis choisissez votre porte !
+                            </h4>
+
+
+
+                            <section id='section' class='section'>
+                                <video class='video' id='video'></video>
+                                <button id='snap' type='submit'>Snap Photo</button>
+                                <canvas id='canvas' style="position: absolute; z-index: 0;"></canvas>
+                                <button type='submit' id='taken'>Use this Photo</button>
+                                <button id='reset'>Reset</button>
+                            </section>
+                            <canvas class="up" id="up">
+                            </canvas>                       
+                            <div id="t-porte" class="insert_img" style="position:absolute; z-index:1;">
+                                <button title="rénistialiser" id="reset" class="reset tools-reset"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- *********************************** -->   
+
+                <!-- 1/ajouter form -->
+                <form method="POST" enctype="multipart/form-data" action="{{path('sifast_pfe_enregistrer')}}" id="myForm">
+                    <input type="hidden" name="img_val" id="img_val" value="" />
+                </form>
+                <!-- 2/ajouter bouton take screenshot 
+                <input type="submit2" value="Take Screenshot" onclick="houcem();" /> 
+                -->
+ <li><input href="#?w=701" type="submit" value="Take Screenshot" onclick="houcem();" /></li>
+               
+
+                <script type="text/javascript">
+                    function houcem() {
+                        $('#work1').html2canvas({
+                            onrendered: function(canvas) {
+                                //Set hidden field's value to image data (base-64 string)
+                                $('#img_val').val(canvas.toDataURL("image/png"));
+                                //Submit the form manually
+                                document.getElementById("myForm").submit();
+                            }
+                        });
+                    }
+                </script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% block footer %}
+{% embed "SifastPfeBundle:layout:footer.html.twig" %}{% endembed %}
+{% endblock %}
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/deconnecte/deco.js') }} "></script>
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/deconnecte/app.js') }} "></script>
+
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/jQuery/jquery-ui.js') }} "></script>
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/jquery.ui.touch-punch.js') }} "></script>
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/moment.js') }} "></script>
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/jquery.liquidcarousel.pack.js') }} "></script>
+
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/transform.js') }} "></script>
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/deconnecte/url.js') }} "></script>
+
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/configuration.js') }} "></script>
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/tr.js') }} "></script>
+
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/script.js') }} "></script>
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/script_1.js') }} "></script>
+
+
+</body>
+</html>

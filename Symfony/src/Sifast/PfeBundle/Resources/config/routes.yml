@@ -1,0 +1,14 @@
+# pour le web service 
+
+produit_service:
+  type: rest
+  prefix: /produit/{id}
+  resource: "Sifast\\PfeBundle\Controller\\ProduitController"
+  name_prefix:  api_1_ 
+
+
+#produit_service2:
+ # type: rest2
+ # prefix: /produit/add
+ # resource: "Sifast\\PfeBundle\Controller\\ProduitController"
+ # name_prefix:  api_1_ 

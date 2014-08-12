@@ -1,0 +1,76 @@
+<footer class="sk_footer">
+    <div class="container_12 clearfix">
+        <div class="con_footer"><p>2014 © SiFAST</p></div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<div id="popup_name" class="popup_block">
+    <h2 class="text_bleu"><u>A propos de :</u></h2>
+    <h4 class="text_bleu">Faites votre simulation en ligne grâce au configurateur de menuiserie !</h4>
+    <p class="text_p">Cette application sera un véritable outil d’aide à la prise de decision.</p>
+    <p class="text_p">Les fonctionnalités proposées par cette application conjuguées à une réelle facilité d’utilisation.</p>
+    <p class="text_p">Mettez en situation une porte ou une fenêtre de la gamme MENUISERIE sur la façade de votre maison ou dans votre intérieur d’appartement ! Rien de plus simple : prenez une photo de face de votre maison ou de votre entrée d'appartement, téléchargez-la sur le site, choisissez une porte ou une fenetre de la gamme MENUISERIE, et intégrez-la. Le tour est joué !</p>
+</div>
+
+<!-- telecharger --> 
+
+<div id="popup_name_e" class="popup popup_block_e">
+                    <div class='a'><button id="bsave">save</button></div>
+                    
+                    <h4> Voici l'aperçu de votre modele</h4>
+                    <img src="{{ asset("bundles/sifastpfe/assets/img/save/model.png") }}"  class="iii">
+
+                    <h5> Telecharger votre modele en cliquant sur le lien :<a style="color:#000;text-decoration: underline;" href="assets/img/save/model.png" download>Telecharger</a></h5>
+                </div>     
+
+<!-- Demande de devis -->      
+<div id="popup_name_d" class="popup popup_block_d">
+    <h2 class="text_bleu"><center><u>Demande de devis</u></center></h2>
+    <img src="{{ asset("bundles/sifastpfe/assets/img/devis.png") }}" class="img_dev">
+
+    <form action="{{path('sifast_pfe_ajout')}}" method="POST">
+        <label>Votre mail :</label>
+        <input type="text" id="mail_clt" name="mail_clt"></br>
+        <label>Type :</label>
+        <select name="type_p" id="type_p">
+            <option value=""> ----- Choisir ----- </option>
+            <option value="porte"> porte </option>
+            <option value="fenetre"> fenetre </option>
+        </select></br>
+        <label>Sous type :</label>
+        <select name="ss_type_p">
+            <option value=""> ----- Choisir ----- </option>
+            <option value="aluminium"> aluminium </option>
+            <option value="pvc"> pvc </option>
+        </select></br>
+        <label>Modele :</label>
+        <select name="modele_p">
+            <option value=""> ----- Choisir ----- </option>
+            <option value="classique"> classique </option>
+            <option value="moderne"> moderne </option>
+        </select></br>
+        <label>Longeur de votre porte/fenêtre (cm):</label>
+        <input type="text" id="longeur" name="longeur"></br>
+        <label>Largeur de votre porte/fenêtre (cm):</label>
+        <input type="text" id="largeur" name="largeur"></br>
+        <label>Couleur :</label>
+        <select name="couleur">
+            <option value=""> ----- Choisir ----- </option>
+            <option value="beige"> beige </option>
+            <option value="noir"> noir </option>
+            <option value="blanc"> blanc </option>
+            <option value="bleu"> bleu </option>
+            <option value="vert"> vert </option>
+            <option value="aqua"> aqua </option>
+        </select></br>
+        <label>Image de votre interface :</label>
+        <input type='file' id='img_devis' name="img_devis">
+        <div id="lower">
+            <input type="submit" value="Ajouter" > 
+        </div>
+    </form>	
+
+</div>
+

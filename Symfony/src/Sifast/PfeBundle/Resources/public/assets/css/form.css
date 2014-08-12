@@ -1,0 +1,115 @@
+/*
+	Formulaires
+*/
+
+/* = Styles de bases = */
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	-webkit-appearance:button;
+	cursor:pointer;
+	border:none;
+        margin-left: 123px;
+        margin-top: 7px;
+}
+/* Removes inner padding and border in FF3+ */
+
+button::-moz-focus-inner, input[type='button']::-moz-focus-inner, input[type='reset']::-moz-focus-inner, input[type='submit']::-moz-focus-inner {
+ border: 0;
+ padding: 0;
+}
+
+/*     custom label
+------------------------------------------------------------------------------------------------*/
+
+form  label {
+	font-size: 14px;
+	color:#000;
+	line-height:30px;
+}
+
+/*     custom input text 
+------------------------------------------------------------------------------------------------*/
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], textarea, select {
+	font: 0.875em/normal Arial, Helvetica, sans-serif;
+	outline-color:#9fd4f4;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], select {
+	font-size:14px;
+	font-weight: 400;
+	background-color:#fff;
+	color:#000;
+	width:55%;
+	float : right;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+}
+input[type="file"]{
+	font-size:14px;
+	font-weight: 400;
+	background-color:#fff;
+	color:#000;
+	width:20%;
+	float : right;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+}
+
+input[type=submit] {
+float: right;
+width: 50%;
+padding: 0;
+margin: 0;
+}
+input[type=submit] {
+margin-top: 1%;
+line-height:30px;
+border-radius: 20px;
+background-color: #acd6ef;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#acd6ef), to(#6ec2e8));
+background-image: -moz-linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+background-image: linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+border: 1px solid #66add6;
+box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .5);
+cursor: pointer;
+
+
+}
+
+input[type=submit2] {
+float: right;
+width: 32%;
+padding: 0;
+margin: 0;
+}
+input[type=submit2] {
+margin-top: 1%;
+line-height:30px;
+border-radius: 20px;
+background-color: #acd6ef;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#acd6ef), to(#6ec2e8));
+background-image: -moz-linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+background-image: linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+border: 1px solid #66add6;
+box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .5);
+cursor: pointer;
+margin-right: 50%;
+text-align: center;
+
+}

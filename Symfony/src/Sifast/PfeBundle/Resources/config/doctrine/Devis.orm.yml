@@ -1,0 +1,16 @@
+Sifast\PfeBundle\Entity\Devis:
+  type: entity
+  table: devis
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    mail:       { type: string }
+    type:       { type: string }
+    sous_type:  { type: string }
+    modele:     { type: string }
+    longeur:    { type: string }
+    largeur:    { type: string }
+    couleur:    { type: string }
+    image:      { type: string }

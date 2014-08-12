@@ -1,0 +1,13 @@
+Sifast\PfeBundle\Entity\Produit:
+  type: entity
+  table: produit
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:       { type: string }
+    type:       { type: string }
+    sous_type:  { type: string }
+    modele:     { type: string }
+    image:      { type: string }

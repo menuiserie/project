@@ -1,0 +1,19 @@
+# pour le resource cher le chemin qui dois le suivre quand il va truver le lien de prefix 
+
+sifast_pfe:
+    resource: "@SifastPfeBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+
+    
+#This rout for the rest full controller        
+sifast_api:
+    type: rest
+    resource: "@SifastPfeBundle/Resources/config/routes.yml"    
+    prefix: /api
+
+
+#sifast_api2:
+   # type: rest2
+   # resource: "@SifastPfeBundle/Resources/config/routes.yml"    
+   # prefix: /api

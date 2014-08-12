@@ -1,0 +1,44 @@
+#pour savoir chemin c'est homecontroller fonction index
+sifast_pfe_homepage:
+    path:     /home
+    defaults: { _controller: SifastPfeBundle:Home:index }
+    
+sifast_pfe_alupage:
+    path:     /alu
+    defaults: { _controller: SifastPfeBundle:Home:alu }
+    
+sifast_pfe_pvcpage:
+    path:     /pvc
+    defaults: { _controller: SifastPfeBundle:Home:pvc }
+    
+sifast_pfe_configpage:
+    path:     /config
+    defaults: { _controller: SifastPfeBundle:Home:config }
+    
+
+
+sifast_pfe_manifestpage:
+    path:     /manifest_mobile
+    defaults: { _controller: SifastPfeBundle:Home:buildManifest }
+ 
+    
+sifast_pfe_ajout:
+    path:     /ajout
+    defaults: { _controller: SifastPfeBundle:Home:ajout }
+    
+    
+sifast_pfe_enregistrer:
+    path:     /enregistrer
+    defaults: { _controller: SifastPfeBundle:Home:enregistrer }
+    
+
+
+
+ # sans utilité   
+produit:
+    pattern:  /users
+    defaults: { _controller: SifastPfeBundle:Produit:index, _format: ~ }
+    requirements:
+        _method: GET
+        
+        

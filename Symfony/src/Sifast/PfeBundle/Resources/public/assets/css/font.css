@@ -1,0 +1,12 @@
+/*
+ * Import font
+ */
+ 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+/* placeholder */
+
+::-webkit-input-placeholder { color:#000; font-size:14px;}
+::-moz-placeholder { color:#000; font-size:14px; } /* firefox 19+ */
+:-ms-input-placeholder { color:#000; font-size:14px; } /* ie */
+input:-moz-placeholder { color:#000; font-size:14px; }

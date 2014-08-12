@@ -1,0 +1,57 @@
+{% extends "SifastPfeBundle::layout.html.twig" %}
+
+{% block content %}
+    <html > 
+        <!--sk-body-->
+        <div id="sk-body">
+            <div class="container_12 clearfix clear-both">
+
+
+                <div class="content-right float-right"> 
+
+                    <div class="barre_menu">
+                        <p class="cat-menu">Classique</p>
+                    </div>
+                    <div id="liquid2" class="liquid">
+                        <span class="previous"></span>
+                        <div class="wrapper">
+                            <ul>
+                                {% for image in images %}
+                                    <li><a href="config?conf=3" title="{{ image }}"><img src="{{ image }}" style="width: 65px;height: 123px" width="65px" height="123px" alt="image 01" border="0" /></a></li>
+                                        {% endfor %} 
+
+
+                            </ul>
+                        </div>
+                        <span class="next"></span>
+                    </div>
+                    <div class="barre_menu">
+                        <p class="cat-menu">Moderne</p>
+                    </div>
+                    <div id="liquid3" class="liquid">
+                        <span class="previous"></span>
+                        <div class="wrapper">
+                            <ul>
+
+                                {% for image2 in images2 %}
+                                    <li><a href="config?conf=4" title="{{ image2 }}"><img src="{{ image2 }}" style="width: 65px;height: 123px" width="65px" height="123px" alt="image 01" border="0" /></a></li>
+                                        {% endfor %} 
+
+                            </ul>
+                        </div>
+                        <span class="next"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            <!--
+                    $(document).ready(function() {
+                $('#liquid1').liquidcarousel({height: 129, duration: 100, hidearrows: false});
+            });
+                    -- >
+        </script>
+    </body>
+</html>
+{% endblock %}

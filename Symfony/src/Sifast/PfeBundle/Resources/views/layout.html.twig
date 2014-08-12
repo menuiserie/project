@@ -1,0 +1,62 @@
+
+<!--manifest="{{path('sifast_pfe_manifestpage')}}" -->
+
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/sifastpfe/assets/css/reset.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/sifastpfe/assets/css/layout.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/sifastpfe/assets/css/font.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/sifastpfe/assets/css/form.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/sifastpfe/assets/css/global.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/sifastpfe/assets/css/menu.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/sifastpfe/assets/css/graphic.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/sifastpfe/assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/sifastpfe/assets/css/global.mq.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/sifastpfe/assets/css/style.mq.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+
+
+
+
+
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/jQuery/jquery-1.11.0.min.js') }} "></script>
+    </head>
+    <body>
+        {% block body %}
+
+
+            <!--sk-body-->
+            <div id="sk-body">
+                <div class="container_12 clearfix clear-both">
+                    <?php include 'menu.php'; ?>
+                    {% block menu %}
+                    {% embed "SifastPfeBundle:layout:menu.html.twig" %}{% endembed %}
+                {% endblock %}
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        {% block footer %}
+        {% embed "SifastPfeBundle:layout:footer.html.twig" %}{% endembed %}
+    {% endblock %}
+
+
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/moment.js') }}"></script>
+    <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/jquery.liquidcarousel.pack.js') }}"></script>
+    <script src="{{ asset('bundles/sifastpfe/assets/js/script.js') }}"></script>
+    <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/modernizr.custom.js') }}"></script>
+    <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/custom.17475.js') }}"></script>
+    <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/respond.js') }}"></script>
+    <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/configuration.js') }}"></script>
+{% endblock %}
+</body>
+</html>

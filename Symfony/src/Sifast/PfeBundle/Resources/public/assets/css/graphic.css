@@ -1,0 +1,59 @@
+/*
+ *
+ * Liens
+ *
+ */
+ 
+/* = Liens = */
+/* = Button => Liens = */
+
+a,
+a:link,
+a:visited {
+	color: #ffffff;
+	text-decoration: none;
+}
+a:hover,
+a:focus,
+a:active {
+	text-decoration:none;
+}
+
+/*
+ *
+ * Button
+ *
+ */
+ 
+/* = Button = */ 
+/* = Button => Style = */
+
+.btn,
+.btn:link,
+.btn:visited {
+	display: block;
+	cursor:pointer;
+	margin:0;
+	font-size: 14px;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+	text-decoration:none;
+}
+
+
+.btn.btn-link,
+.btn.btn-link:link,
+.btn.btn-link:visited {
+	text-align: center;
+	padding: 10px 15px;
+	color: #fff;
+	background-color:#000;
+}
+.btn.btn-link:hover,
+.btn.btn-link:focus,
+.btn.btn-link:active {
+	background-color:#fff;
+	color: #000;
+}

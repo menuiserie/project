@@ -1,0 +1,122 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    background:#fff;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    background-color:#CCC;
+    height: 4px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    top: -1px;
+    z-index: 1;
+    width: 15px;
+    height: 15px; 
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(50%,#abd3ee), color-stop(51%,#89c3eb), color-stop(100%,#d5ebfb));
+}
+.container-top {
+    min-height: 100px;
+}
+.container-top .elastislide-horizontal {
+    border: 2px solid black;
+}
+.container-bottom .tools{
+    background-color: gray;
+}
+.container-bottom .tools .dropbox #btn2 {
+    display:none;
+}
+.container-bottom .tools .dropbox .fileupload {
+    width: 100%;
+}
+.container-bottom .tools .zoom,
+.container-bottom .tools .zoomx,
+.container-bottom .tools .zoomy,
+.container-bottom .tools .perspectx,
+.container-bottom .tools .perspecty{
+    margin: 10px 0;
+}
+.work{
+    background-color: #f0f2f5;
+    min-height: 500px;
+    position: relative;
+	width: 70%;
+	margin-left: 15%;
+	margin-bottom: 5%;
+}
+.section {
+    background-color:white; 
+    display:none;
+    
+}
+.video {
+    position:absolute;
+    z-index:1;
+    height:180px;
+}
+#snap {
+    position:absolute;
+    z-index:2; 
+    margin-left:185px;
+    display:none;
+}
+#canvas {
+    position:absolute; 
+    z-index:2;
+    height:295px;
+    margin-top: 180px;
+    margin-top: 133px;
+}
+#taken {
+     position:absolute;
+    z-index:3; 
+    margin-left:185px;
+    display:none;
+}
+.up {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    min-height: 500px;
+    min-width: 100%;
+    max-width: 100%;
+}
+.container-bottom .work #photo {
+    position: absolute;
+    z-index: 1;
+	display:none;
+}
+.container-bottom .work #zoomwrapper1 #box {
+	width:92px; 
+	height: 200px; 
+	border: 1px black solid; 
+	background-color: #d0d0d0;
+}
+
+.video#video {
+width: 100%;
+height: 94%;
+margin-top: 24px;
+}
+canvas#canvas {
+width: 100%;
+height: 94%;
+margin-top: 24px;
+margin-left: 93px;
+}
+
+
+#snap {}
