@@ -1,8 +1,5 @@
-
-<!--manifest="{{path('sifast_pfe_manifestpage')}}" -->
-
-<!DOCTYPE html>
-<html >
+<!-- pour manifest il faut ecrire n'importe quoi et vider cache pour actualisé -->
+<html manifest="{{path('sifast_pfe_manifestpage')}}">
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -17,6 +14,7 @@
             <link href="{{ asset('bundles/sifastpfe/assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
             <link href="{{ asset('bundles/sifastpfe/assets/css/global.mq.css') }}" rel="stylesheet" type="text/css" media="all" />
             <link href="{{ asset('bundles/sifastpfe/assets/css/style.mq.css') }}" rel="stylesheet" type="text/css" media="all" />
+            
 
 
 
@@ -26,6 +24,7 @@
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/jQuery/jquery-1.11.0.min.js') }} "></script>
+        
     </head>
     <body>
         {% block body %}
@@ -54,9 +53,9 @@
     <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/jquery.liquidcarousel.pack.js') }}"></script>
     <script src="{{ asset('bundles/sifastpfe/assets/js/script.js') }}"></script>
     <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/modernizr.custom.js') }}"></script>
-    <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/custom.17475.js') }}"></script>
+    <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/modernizr.custom.17475.js') }}"></script>
     <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/respond.js') }}"></script>
-    <script src="{{ asset('bundles/sifastpfe/assets/js/plugins/configuration.js') }}"></script>
+    <script src="{{ asset('bundles/sifastpfe/assets/js/configuration.js') }}"></script>
 {% endblock %}
 </body>
 </html>

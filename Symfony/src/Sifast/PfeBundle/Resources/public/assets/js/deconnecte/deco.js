@@ -1,8 +1,8 @@
 // effacer file system
 
 //filesystem.clear();
-filesystem.clear();
-filesystem.init(fs);
+//filesystem.clear();
+//filesystem.init(fs);
 //filesystem.file.delete('image0');
 
 

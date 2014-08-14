@@ -24,14 +24,25 @@ class HomeController extends Controller {
     }
     
      public function enregistrerAction() {
-         echo 'ok';die;
-         $filteredData->substr($_POST['img_val'], strpos($_POST['img_val'], ",")+1);
-         $unencodedData->base64_decode($filteredData);
-         file_put_contents('img.png', $unencodedData);
-         echo '<img src="'.$_POST['img_val'].'" />';
          
+         //Get the base-64 string from data
+$filteredData=substr($_POST['img_val'], strpos($_POST['img_val'], ",")+1);
 
-        return $this->render('SifastPfeBundle:home:index.html.twig');
+//Decode the string
+$unencodedData=base64_decode($filteredData);
+
+//Save the images
+//echo $this->get('kernel')->getRootDir().'/img.png' ;die();
+file_put_contents($this->get('kernel')->getRootDir() . '/img.png', $unencodedData);
+         
+         
+       //  $filteredData->substr($_POST['img_val'], strpos($_POST['img_val'], ",")+1);
+      //   $unencodedData->base64_decode($filteredData);
+      //   file_put_contents('img.png', $unencodedData);
+         //echo '<img src="'.$_POST['img_val'].'" />';
+         //echo '<img src="'.$_POST['img_val'].'" />';die();
+
+        return $this->render('SifastPfeBundle:home:enregistrement.html.twig', array('images' => $_POST['img_val']));
     }
 
     

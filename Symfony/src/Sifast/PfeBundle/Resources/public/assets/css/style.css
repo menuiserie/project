@@ -290,7 +290,7 @@ body {
 	height: 100%;
 	z-index: 1;
 	position: absolute;
-	top: 130px;
+	top: 129px;
 	left: 0;
 	bottom: 0;
 }
@@ -586,6 +586,7 @@ ul ul {
 }
 .popup_block {
 display: none;
+overflow: auto;
 width: 50% !important;
 height: 55% ;
 background: #ffffff;

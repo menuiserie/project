@@ -329,7 +329,6 @@ input#image {
     width: 72%;
     background-color: #ffffff;
     margin: 1% 4% 0 0%;
-    padding-bottom: 30px;
 }
 .acc_img {
     width: 100% !important;
@@ -616,6 +615,7 @@ ul ul {
 }
 .popup_block {
     display: none;
+    overflow: auto;
     width: 50% !important;
     height: 70% ;
     background: #ffffff;
@@ -663,6 +663,7 @@ img.btn_close {
     opacity: .80;
     z-index: 9999;
 }
+
 .popup_block_e {
     display: none;
     width: 50% !important;
@@ -705,6 +706,7 @@ img.btn_close_e {
     opacity: .80;
     z-index: 9999;
 }
+
 .popup_block_d {
     display: none;
     width: 65% !important;

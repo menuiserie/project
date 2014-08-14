@@ -27,7 +27,6 @@
 
         <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/jQuery/jQuery.1.7.js') }} "></script>
         <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/modernizr.custom.js') }} "></script>
-        <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/modernizr.custom.17475.js') }} "></script>
         <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/respond.js') }} "></script>
 
         <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/html2canvas.js') }} "></script>
@@ -41,6 +40,23 @@
 
 
 </head>
+<script type="text/javascript">
+    function capture() {
+    alert('rrrr');
+            html2canvas($('#target'),{
+    onrendered: function (canvas) {
+    alert('rrrr');
+            console.log("bbbbbbbbbbbbb");
+            console.log('ssssss');
+            //Set hidden field's value to image data (base-64 string)
+            $('#img_val').val(canvas.toDataURL("image/png"));
+            //Submit the form manually
+            document.getElementById("myForm").submit();
+    }
+
+    });
+    }
+</script>
 <body class="">
     <header id="sk-header">
         <div class="container_12 clearfix">
@@ -70,7 +86,11 @@
                     <p class="breadcrumb_porte_alu"><a href="#">Configurateur</a></p>
                 </div>
 
+
                 <div class="mod-tools">
+                    <!-- 1/ajouter form -->
+
+
                     <ul>
                         <li>
                             <a href="#" class="open-to-tools" title="Outils">
@@ -84,11 +104,12 @@
 
                                 <li><a href="#" class="tools-imp" title="Imprimer" onclick="window.print();" ></a></li><!--window.print();-->
 
-                                <li><a href="#?w=700" class="poplight_e ajou tools-save"  rel="popup_name_e" title="Enregistrer" ></a></li>
+                                <li><a href="#?w=700" class="poplight_e ajou tools-save" id="save_cli" rel="popup_name_e" title="Enregistrer" ></a></li>
+                                <!--    <li><div   href="enregistrer" class="tools-save" onclick="capture();"></div></li>  -->
 
                                 <li><a href="#" class="" title="camera" ><button class="tools-cam butt" id="butt" onClick="cam();"></button></a></li>
 
-   
+
                             </ul>
                         </li>
                     </ul>
@@ -97,8 +118,8 @@
         </div>
     </header>
     <!--sk-body-->
-    
-    <div id="sk-body">
+
+    <div id="sk-body" class="sk-body">
         <div class="container_12 clearfix clear-both">
 
 
@@ -174,31 +195,33 @@
                         </ul>
 
                         <script>
-
-                            var test = {{ images|json_encode|raw }};                        </script>
+//dans app
+                                    var test = {{ images|json_encode|raw }};
+//dans devis
+                                    var devis1 =  {{path('sifast_pfe_ajout')}} ;
+                                                        
+                      
+                        
+                        
+                        </script>
                         <script language="javascript">
                                     function imprime_bloc(titre, objet) {
-                                        // Définition de la zone à imprimer 
-                                        var zone = document.getElementById(objet).innerHTML;
-
-                                        // Ouverture du popup 
-                                        var fen = window.open("", "", "height=800, width=600,toolbar=0, menubar=0, scrollbars=1, resizable=1,status=0, location=0, left=10, top=10");
-
-                                        // style du popup 
-                                        fen.document.body.style.color = '#000000';
-                                        fen.document.body.style.backgroundColor = '#FFFFFF';
-                                        fen.document.body.style.padding = "20px";
-
-                                        // Ajout des données a imprimer 
-                                        fen.document.title = titre;
-                                        fen.document.body.innerHTML += " " + zone + " ";
-
-                                        // Impression du popup 
-                                        fen.window.print();
-
-                                        //Fermeture du popup 
-                                        fen.window.close();
-                                        return true;
+                                    // Définition de la zone à imprimer 
+                                    var zone = document.getElementById(objet).innerHTML;
+                                            // Ouverture du popup 
+                                            var fen = window.open("", "", "height=800, width=600,toolbar=0, menubar=0, scrollbars=1, resizable=1,status=0, location=0, left=10, top=10");
+                                            // style du popup 
+                                            fen.document.body.style.color = '#000000';
+                                            fen.document.body.style.backgroundColor = '#FFFFFF';
+                                            fen.document.body.style.padding = "20px";
+                                            // Ajout des données a imprimer 
+                                            fen.document.title = titre;
+                                            fen.document.body.innerHTML += " " + zone + " ";
+                                            // Impression du popup 
+                                            fen.window.print();
+                                            //Fermeture du popup 
+                                            fen.window.close();
+                                            return true;
                                     }
                         </script>
 
@@ -212,12 +235,14 @@
 
 
                         <!-- SVP, prendre une phote de votre Galerie ou de votre camera ! Puis choisissez votre porte ! -->
-                        <div >
-                            <h4 class="h1111" id="imprime_moi">
+                        <h4>SVP, prendre une phote de votre Galerie ou de votre camera ! Puis choisissez votre porte !</h4>
+
+                        <div id="target" class="target">
+                            <div class="h1111" id="imprime_moi">
                                 <img src="{{ asset("bundles/sifastpfe/assets/img/save/model.png") }}" classe="vd" ><br>
 
-                                SVP, prendre une phote de votre Galerie ou de votre camera ! Puis choisissez votre porte !
-                            </h4>
+
+                            </div>
 
 
 
@@ -240,30 +265,83 @@
 
 
 
-                <!-- *********************************** -->   
+                <!-- enregistrement-->   
 
-                <!-- 1/ajouter form -->
-                <form method="POST" enctype="multipart/form-data" action="{{path('sifast_pfe_enregistrer')}}" id="myForm">
-                    <input type="hidden" name="img_val" id="img_val" value="" />
-                </form>
-                <!-- 2/ajouter bouton take screenshot 
-                <input type="submit2" value="Take Screenshot" onclick="houcem();" /> 
-                -->
- <li><input href="#?w=701" type="submit" value="Take Screenshot" onclick="houcem();" /></li>
-               
 
-                <script type="text/javascript">
-                    function houcem() {
-                        $('#work1').html2canvas({
-                            onrendered: function(canvas) {
-                                //Set hidden field's value to image data (base-64 string)
-                                $('#img_val').val(canvas.toDataURL("image/png"));
-                                //Submit the form manually
-                                document.getElementById("myForm").submit();
-                            }
-                        });
-                    }
-                </script>
+                <div id="popup_name_e" class="popup_save popup popup_block_e">
+                    
+                    
+     <form method="POST" enctype="multipart/form-data" action="{{path('sifast_pfe_enregistrer')}}" id="myForm">
+            <input type="hidden" name="img_val" id="img_val" value="" />
+    </form>
+            <!--<div class='a'><button id="bsave" onclick="capture();">save</button></div>-->
+            <button id="bsave" onclick="capture();">save</button>
+
+                    <h4> Voici l'aperçu de votre modele</h4>
+                    <div  class="iii" ></div>
+
+                    <h5> Telecharger votre modele en cliquant sur le lien :<a style="color:#000;text-decoration: underline;" href="assets/img/save/model.png" download>Telecharger</a></h5>
+                </div>     
+
+                <!-- Demande de devis -->      
+                <div id="popup_name_d" class="popup popup_block_d">
+
+                    <h2 class="text_bleu"><center><u>Demande de devis</u></center></h2>
+                    <img src="{{ asset("bundles/sifastpfe/assets/img/devis.png") }}" class="img_dev">
+
+                    <form id="monForm" action="{{path('sifast_pfe_ajout')}}" method="POST">
+                        <label>Votre mail :</label>
+                        <input type="text" id="mail_clt" name="mail_clt"></br>
+                        <label>Type :</label>
+                        <select name="type_p" id="type_p">
+                            <option value=""> ----- Choisir ----- </option>
+                            <option value="porte"> porte </option>
+                            <option value="fenetre"> fenetre </option>
+                        </select></br>
+                        <label>Sous type :</label>
+                        <select name="ss_type_p" id="sous_type">
+                            <option value=""> ----- Choisir ----- </option>
+                            <option value="aluminium"> aluminium </option>
+                            <option value="pvc"> pvc </option>
+                        </select></br>
+                        <label>Modele :</label>
+                        <select name="modele_p" id="modele">
+                            <option value=""> ----- Choisir ----- </option>
+                            <option value="classique"> classique </option>
+                            <option value="moderne"> moderne </option>
+                        </select></br>
+                        <label>Longeur de votre porte/fenêtre (cm):</label>
+                        <input type="text" id="longeur" name="longeur"></br>
+                        <label>Largeur de votre porte/fenêtre (cm):</label>
+                        <input type="text" id="largeur" name="largeur"></br>
+                        <label>Couleur :</label>
+                        <select name="couleur" id="couleur_id">
+                            <option value=""> ----- Choisir ----- </option>
+                            <option value="beige"> beige </option>
+                            <option value="noir"> noir </option>
+                            <option value="blanc"> blanc </option>
+                            <option value="bleu"> bleu </option>
+                            <option value="vert"> vert </option>
+                            <option value="aqua"> aqua </option>
+                        </select></br>
+                        <label>Image de votre interface :</label>
+                        <!-- sbab la5rab-->
+                        <input type='file' id='img_devis' name="img_devis" style="display: none;">
+                        <div id="lower">
+                            <input  id="submit" name="submit" type="submit" value="Ajouter" > 
+                        </div>
+                    </form>	
+
+                </div>
+
+                <div id="popup_name" class="popup_block">
+                    <h2 class="text_bleu"><u>A propos de :</u></h2>
+                    <h4 class="text_bleu">Faites votre simulation en ligne grâce au configurateur de menuiserie !</h4>
+                    <p class="text_p">Cette application sera un véritable outil d’aide à la prise de decision.</p>
+                    <p class="text_p">Les fonctionnalités proposées par cette application conjuguées à une réelle facilité d’utilisation.</p>
+                    <p class="text_p">Mettez en situation une porte ou une fenêtre de la gamme MENUISERIE sur la façade de votre maison ou dans votre intérieur d’appartement ! Rien de plus simple : prenez une photo de face de votre maison ou de votre entrée d'appartement, téléchargez-la sur le site, choisissez une porte ou une fenetre de la gamme MENUISERIE, et intégrez-la. Le tour est joué !</p>
+                </div>
+
 
 
 
@@ -280,6 +358,7 @@
 {% endblock %}
 <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/deconnecte/deco.js') }} "></script>
 <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/deconnecte/app.js') }} "></script>
+<script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/deconnecte/devis.js') }} "></script>
 
 <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/jQuery/jquery-ui.js') }} "></script>
 <script type="text/javascript" src="{{ asset('bundles/sifastpfe/assets/js/plugins/jquery.ui.touch-punch.js') }} "></script>

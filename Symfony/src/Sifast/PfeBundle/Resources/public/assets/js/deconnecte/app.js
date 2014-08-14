@@ -86,7 +86,7 @@ $(document).ready(function() {
 
                 reader.onload = function(e) {
 
-                    console.log('entrie name hhhhhhh = ' + this.result);
+                   // console.log('entrie name hhhhhhh = ' + this.result);
 
                     /*    var a = $("img").attr({
                      src: this.result,

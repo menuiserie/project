@@ -1,18 +1,3 @@
-
-// transferer image selectionner de alu ver config
-
-$( document ).ready(function() {
-    
-    
-  // Handler for .ready() called.
-  $('.imgclick').click(function(){
-  
-      var test = $(this).find('img').attr('src');
-      localStorage['imgProduct'] = test;
-      
-});
-});
-
 //JS date
 function date_heure(id) {
     date = new Date;
@@ -42,8 +27,16 @@ function date_heure(id) {
     setTimeout('date_heure("' + id + '");', '1000');
     return true;
 }
-//ready
 $(document).ready(function() {
+    
+    //insertion de la porte de pvc vert config
+    // Handler for .ready() called.
+    $('.imgclick').click(function() {
+
+        var test = $(this).find('img').attr('src');
+        localStorage['imgProduct'] = test;
+    });
+
     // mmenu
     $.fn.mmenu();
 
@@ -77,15 +70,32 @@ $(document).ready(function() {
     $('#snap').click(function() {
         $(this).parents('.section').find('.video').hide();
         $(this).hide();
-      //$(this).parents('.section').find('#snap').hide();
+        //$(this).parents('.section').find('#snap').hide();
     });
     $('#reset').click(function() {
         $(this).parents('.section').find('.video').show();
         $(this).parents('.section').find('#snap').show();
-        
+
         $('#canvas').hide();
         $('#taken').hide();
     });
+
+    //copier votre modéle dans popup
+    $('#save_cli').click(function() {
+        //alert ('ok');
+        //vider popo
+        $(this).parents('body').find('.sk-body').find('.popup_save').children('.iii').empty();
+    //insertion de la contenu de .target
+        var model = $(this).parents('body').find('.sk-body').find('.target').clone();
+        $(this).parents('body').find('.sk-body').find('.popup_save').children('.iii').html(model);
+        return false;
+    });
+
+
+
+
+
+
 }); //fin ready
 
 // mmenu
@@ -254,6 +264,7 @@ $.fn.popup_e = function(options) {
         var dim = query[1].split('&amp;');
         var popWidth = dim[0].split('=')[1]; //La première valeur du lien
 
+
         //Faire apparaitre la pop-up et ajouter le bouton de fermeture  display : block = fadein
         $('#' + popID).fadeIn().css({
             'width': Number(popWidth)
@@ -274,7 +285,6 @@ $.fn.popup_e = function(options) {
 
         return false;
     });
-
 //Fermeture de la pop-up et du fond
     $('a.close, #fade_e').live('click', function() {
         $('#fade_e , .popup_block_e').fadeOut(function() {
